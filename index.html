@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101114">
+  <title>سكساوي | منصة الفيديو</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html" aria-label="سكساوي الرئيسية">
+      <span class="brand-mark">س</span><span>سكساوي</span>
+    </a>
+    <form class="search" id="searchForm">
+      <input id="searchInput" type="search" placeholder="ابحث عن فيديو..." autocomplete="off">
+      <button aria-label="بحث" type="submit">⌕</button>
+    </form>
+    <div class="top-actions"><span class="online-dot"></span><span>شاهد واستمتع</span></div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <a class="side-link active" href="index.html"><span>⌂</span> الرئيسية</a>
+      <button class="side-link" data-filter="all"><span>▦</span> كل الفيديوهات</button>
+      <div class="side-title">التصنيفات</div>
+      <div id="categoryList" class="category-list"></div>
+      <div class="sidebar-note"><strong>سكساوي</strong><p>مساحتك لمشاهدة الفيديوهات والتفاعل معها.</p></div>
+    </aside>
+
+    <main class="main-content">
+      <section class="welcome">
+        <div>
+          <p class="eyebrow">أهلاً بيك في</p>
+          <h1>سكساوي <span>ـ</span></h1>
+          <p class="welcome-copy">اكتشف فيديوهات جديدة، شارك رأيك، واستمتع بالمشاهدة.</p>
+        </div>
+        <div class="welcome-icon">▶</div>
+      </section>
+      <div class="section-heading">
+        <div><p class="eyebrow">مكتبة الفيديوهات</p><h2 id="sectionTitle">أحدث الفيديوهات</h2></div>
+        <span class="video-count" id="videoCount">0 فيديو</span>
+      </div>
+      <section id="videoGrid" class="video-grid" aria-live="polite"></section>
+      <div id="emptyState" class="empty-state hidden"><span>⌕</span><h3>مفيش فيديوهات هنا</h3><p>جرّب كلمة بحث أو تصنيف تاني.</p></div>
+      <footer>© 2026 سكساوي — جميع الحقوق محفوظة</footer>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
+  <script src="videos.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

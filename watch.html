@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101114">
+  <title>مشاهدة الفيديو | سكساوي</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html"><span class="brand-mark">س</span><span>سكساوي</span></a>
+    <a class="back-home" href="index.html">← الرئيسية</a>
+  </header>
+  <main class="watch-layout">
+    <section class="watch-main">
+      <div class="player-wrap" id="playerWrap">
+        <video id="videoPlayer" controls playsinline preload="metadata"></video>
+        <div id="playerPlaceholder" class="player-placeholder"><span>▶</span><p>أضف رابط الفيديو في ملف videos.js</p></div>
+      </div>
+      <div class="watch-title-row">
+        <div><p class="eyebrow">بتتفرج دلوقتي على</p><h1 id="watchTitle">عنوان الفيديو</h1></div>
+        <span class="category-pill" id="watchCategory">عام</span>
+      </div>
+      <div class="watch-meta"><span id="watchViews">مشاهدة</span><span>•</span><span id="watchDate">سكساوي</span></div>
+      <div class="action-row">
+        <div class="reaction-group">
+          <button class="reaction-btn" id="likeBtn" type="button"><span>👍</span><b id="likeCount">0</b> إعجاب</button>
+          <button class="reaction-btn" id="dislikeBtn" type="button"><span>👎</span><b id="dislikeCount">0</b> عدم إعجاب</button>
+        </div>
+        <button class="share-btn" id="shareBtn" type="button"><span>↗</span> مشاركة</button>
+      </div>
+      <section class="description-card"><h3>وصف الفيديو</h3><p id="watchDescription">لا يوجد وصف لهذا الفيديو.</p></section>
+      <section class="comments-section">
+        <div class="comments-heading"><h2>التعليقات</h2><span id="commentCount">0 تعليق</span></div>
+        <form id="commentForm" class="comment-form">
+          <input id="commentName" maxlength="40" placeholder="اسمك (اختياري)" aria-label="اسمك">
+          <textarea id="commentText" maxlength="600" required placeholder="اكتب تعليقك..."></textarea>
+          <button class="primary-btn" type="submit">نشر التعليق</button>
+        </form>
+        <div id="commentsList" class="comments-list"></div>
+      </section>
+    </section>
+    <aside class="related-panel"><h2>فيديوهات ممكن تعجبك</h2><div id="relatedVideos" class="related-list"></div></aside>
+  </main>
+  <div id="toast" class="toast" role="status"></div>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
+  <script src="videos.js"></script>
+  <script src="watch.js"></script>
+</body>
+</html>
